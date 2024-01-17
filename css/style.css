@@ -1,12 +1,11 @@
 body {
   margin: 0px;
+  background-color: #F4F4F2;
 }
 
 #main {
   height: 100vh;
-  width: 100vh;
   display: flex;
-  margin: 0px auto 0px auto;
 }
 
 #main-divider {
@@ -14,7 +13,6 @@ body {
   background-color: #CECECE;
   width: 1px;
   border-radius: 0.2px;
-  margin: 0px 65px 0px 40px;
 }
 
 #products {
@@ -22,7 +20,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  margin-top: 32px;
+  padding: 32px 40px 51px 80px;
 }
 
 #product-divider {
@@ -36,7 +34,26 @@ body {
   height: 147px;
 }
 
-#breadcrumbs span {
+#infos {
+  width: 100%;
+  padding: 32px 95px 40px 64px;
+}
+
+#card-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#breadcrumbs {
+  height: 20px;
+}
+
+#breadcrumbs ol li a {
+  text-decoration: none;
+}
+
+#breadcrumbs ol li a span {
   font-family: 'Jost', sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -46,17 +63,27 @@ body {
     #9B9B98;
 }
 
-#breadcrumbs a {
-  text-decoration: none;
+#breadcrumbs ol li a span:hover {
+  font-weight: 600;
+}
+
+#breadcrumbs ol li {
+  transition: transform 0.3s ease;
+}
+
+#breadcrumbs ol li:hover {
+  transform: scale(1.05);
 }
 
 #breadcrumbs ol {
   display: flex;
   gap: 8px;
   list-style-type: none;
+  padding: 0px;
+  margin: 0px;
 }
 
-#breadcrumbs li::after {
+#breadcrumbs ol li::after {
   content: "|";
   font-size: 8px;
   border-radius: 0.2px;
@@ -66,4 +93,66 @@ body {
 
 #breadcrumbs li:last-child::after {
   content: none;
+}
+
+#edition-selection {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid;
+  border-color: #ECECEA;
+  padding: 12px;
+  border-radius: 1px;
+  box-shadow: 0px 4px 8px 0px rgba(4, 5, 12, 0.1);
+}
+
+#label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#card-number {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+#card-name {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.15px;
+}
+
+#acronym {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+#acronym span {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+#acronym span::before {
+  content: "|";
+  font-size: 14px;
+  margin-right: 8px;
+  color: #CECECE;
+}
+
+#arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid #04050C;
 }
