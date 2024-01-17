@@ -1,0 +1,35 @@
+body {
+  margin: 0px;
+}
+
+#main {
+  height: 100vh;
+  width: 100vh;
+  display: flex;
+}
+
+#main-divider {
+  height: 100%;
+  background-color: #CECECE;
+  width: 1px;
+  border-radius: 0.2px;
+  margin: 0px 65px 0px 40px;
+}
+
+#products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+#product-divider {
+  height: 1px;
+  background-color: #CECECE;
+  width: 328px;
+}
+
+#all-products img {
+  width: 106px;
+  height: 147px;
+}
