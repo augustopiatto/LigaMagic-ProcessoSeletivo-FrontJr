@@ -6,6 +6,7 @@ body {
   height: 100vh;
   width: 100vh;
   display: flex;
+  margin: 0px auto 0px auto;
 }
 
 #main-divider {
@@ -21,6 +22,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 32px;
+  margin-top: 32px;
 }
 
 #product-divider {
@@ -32,4 +34,36 @@ body {
 #all-products img {
   width: 106px;
   height: 147px;
+}
+
+#breadcrumbs span {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.15px;
+  color:
+    #9B9B98;
+}
+
+#breadcrumbs a {
+  text-decoration: none;
+}
+
+#breadcrumbs ol {
+  display: flex;
+  gap: 8px;
+  list-style-type: none;
+}
+
+#breadcrumbs li::after {
+  content: "|";
+  font-size: 8px;
+  border-radius: 0.2px;
+  margin-left: 8px;
+  color: #9B9B98;
+}
+
+#breadcrumbs li:last-child::after {
+  content: none;
 }
