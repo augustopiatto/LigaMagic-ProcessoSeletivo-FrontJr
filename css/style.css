@@ -412,6 +412,16 @@ body {
   gap: 8px;
 }
 
+.piwpd-wrapper {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.piwpd-wrapper.show {
+  display: flex;
+}
+
 .piwpd-title {
   height: 32px;
   display: flex;

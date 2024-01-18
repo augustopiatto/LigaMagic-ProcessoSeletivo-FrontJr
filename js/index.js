@@ -1,15 +1,15 @@
-const showAll = document.getElementById("piwpdt-expand");
+const showDetails1 = document.getElementById("expand-1");
+const showDetails2 = document.getElementById("expand-2");
 
-showAll?.addEventListener("click", expandCardDetails);
+showDetails1?.addEventListener("click", () => expandCardDetails("expand-container-1"));
+showDetails2?.addEventListener("click", () => expandCardDetails("expand-container-2"));
 
-function expandCardDetails() {
-  const details = document.getElementsByClassName("details")
+function expandCardDetails(elementId) {
+  const productDetails = document.getElementById(elementId)
 
-  for(detail of details) {
-    if(detail.style.display === "none") {
-      detail.style.display = "flex"
-    } else {
-      detail.style.display = "none"
-    }
+  if(productDetails.classList.contains("show")) {
+    productDetails.classList.remove("show")
+  } else {
+    productDetails.classList.add("show")
   }
 }
