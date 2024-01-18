@@ -337,3 +337,79 @@ body {
 #shopping-list-add:hover {
   transform: scale(1.05);
 }
+
+#card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#card-details-title {
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#card-details-title h1 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.5px;
+  color: #04050C;
+  margin: 0px;
+  padding-left: 20px;
+}
+
+#card-details-title a {
+  text-decoration: none;
+  font-family: 'Jost', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.55px;
+  text-align: center;
+  color: #FF5921;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.details {
+  height: 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ECECEA;
+  border-radius: 1px;
+  padding: 0px 12px 0px 12px;
+}
+
+#details-mana {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.details-title {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+  color: #727270;
+}
+
+.details-info {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.5px;
+  text-align: right;
+  color: #0085FF;
+}
+
+.secondary {
+  color: #474745;
+}
