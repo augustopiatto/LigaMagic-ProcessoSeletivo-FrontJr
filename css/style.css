@@ -56,7 +56,7 @@ body {
 }
 
 #arrow-right:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 #arrow-left {
@@ -75,7 +75,7 @@ body {
 }
 
 #arrow-left:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 #infos {
