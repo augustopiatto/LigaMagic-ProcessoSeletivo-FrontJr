@@ -117,6 +117,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.1px;
+  color: #04050C;
 }
 
 #edition-name {
@@ -125,6 +126,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.15px;
+  color: #04050C;
 }
 
 #acronym {
@@ -176,6 +178,7 @@ body {
   line-height: 28px;
   letter-spacing: 0.48px;
   margin: 0px;
+  color: #04050C;
 }
 
 #title h2 {
@@ -186,6 +189,7 @@ body {
   line-height: 24px;
   letter-spacing: 0.65px;
   margin: 0px;
+  color: #727270;
 }
 
 #icons-button {
@@ -221,4 +225,115 @@ body {
   max-width: 4px;
   min-width: 4px;
   background-color: #FF5921;
+}
+
+#shopping-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #ECECEA;
+  border-radius: 1px;
+  padding: 14px 20px 18px 20px;
+  box-shadow: 0px 4px 8px 0px rgba(4, 5, 12, 0.1);
+}
+
+#shopping-list-title {
+  display: flex;
+  gap: 8px;
+}
+
+#shopping-list-title h1 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.48px;
+  color: #474745;
+  margin: 0px;
+}
+
+#shopping-list p {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+  color: #727270;
+  margin: 0px;
+}
+
+#shopping-list-actions {
+  display: flex;
+  gap: 24px;
+}
+
+#shopping-list-filters {
+  display: flex;
+  gap: 8px;
+}
+
+#shopping-list-counter {
+  width: 102px;
+  display: flex;
+  gap: 3px;
+  padding: 9px 4px 9px 4px;
+  border: 1px solid;
+  border-color: #CECECE;
+  border-radius: 1px;
+  background-color: #F4F4F2;
+  justify-content: space-between;
+}
+
+#shopping-list-counter button {
+  height: 16px;
+  width: 16px;
+  margin: 0px;
+  padding: 0px;
+  padding-inline: 0px;
+  padding-block: 0px;
+  border: none;
+  cursor: pointer;
+}
+
+#shopping-list-settings {
+  height: 40px;
+  width: 40px;
+  background-color: #ECECEA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.8px solid;
+  border-color: #CECECE;
+  border-radius: 0.6px;
+  box-shadow: 0px 4px 8px 0px rgba(4, 5, 12, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#shopping-list-settings:hover {
+  transform: scale(1.05);
+}
+
+#shopping-list-add {
+  height: 40px;
+  border-radius: 1px;
+  border: none;
+  padding: 8px 12px 8px 12px;
+  display: flex;
+  gap: 8px;
+  background-color: #127119;
+  box-shadow: 0px 4px 8px 0px rgba(4, 5, 12, 0.1);
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.5px;
+  color: #DAEDCE;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#shopping-list-add:hover {
+  transform: scale(1.05);
 }
