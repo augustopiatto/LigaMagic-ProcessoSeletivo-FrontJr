@@ -289,6 +289,26 @@ body {
   height: 32px;
   width: 32px;
   cursor: pointer;
+  transition: filter 0.5s ease-in-out transform 1s ease-in-out;
+}
+
+.piwptb-favorite.clicked {
+  filter: invert(1) sepia(1) saturate(10) hue-rotate(330deg);
+  animation: heartbeat ease-in-out 1s
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1)
+  }
+
+  50% {
+    transform: scale(1.2)
+  }
+
+  100% {
+    transform: scale(1)
+  }
 }
 
 .piwptb-more-info {
@@ -418,7 +438,7 @@ body {
   gap: 8px;
 }
 
-.piwpd-wrapper.show {
+.piwpd-wrapper.clicked {
   display: flex;
 }
 
