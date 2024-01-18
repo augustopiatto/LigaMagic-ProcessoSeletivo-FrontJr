@@ -1,4 +1,4 @@
-const showAll = document.getElementById("card-details-title-show-all");
+const showAll = document.getElementById("piwpdt-expand");
 
 showAll?.addEventListener("click", expandCardDetails);
 

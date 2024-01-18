@@ -16,23 +16,21 @@
 
 <body>
   <div id="main">
-    <div id="products">
-      <div id="selected-product">
-        <img src="img/MainCard.png" alt="main-card" />
-      </div>
-      <div id="product-divider"></div>
-      <div id="carousel">
-        <div id="arrow-left"></div>
+    <div class="products">
+      <img src="img/MainCard.png" alt="main-card" />
+      <div class="p-divider"></div>
+      <div class="p-carousel">
+        <div class="arrow-down pc-arrow-left"></div>
         <img src="img/SecondCard.png" alt="second-card" />
         <img src="img/ThirdCard.png" alt="third-card" />
         <img src="img/MainCard.png" alt="main-card" />
-        <div id="arrow-right"></div>
+        <div class="arrow-down pc-arrow-right"></div>
       </div>
     </div>
-    <div id="main-divider"></div>
-    <div id="infos">
-      <div id="card-infos">
-        <div id="breadcrumbs">
+    <div class="main-divider"></div>
+    <div class="product-infos">
+      <div class="pi-wrapper">
+        <div class="piw-breadcrumbs">
           <ol>
             <li><a href=""><span>Home</span></a></li>
             <li><a href=""><span>Magic: The Gathering</span></a></li>
@@ -40,41 +38,41 @@
             <li><a href=""><span>Bazar - Lista de Desejos</span></a></li>
           </ol>
         </div>
-        <div id="edition-selection">
-          <div id="label">
+        <div class="piw-edition-selector">
+          <div class="piwes-label">
             <img src="img/svg/C.svg" alt="edition" />
-            <span id="edition-number">#045</span>
-            <span id="edition-name">Dominaria Remastered</span>
+            <span class="piwesl-number">#045</span>
+            <span class="piwesl-name">Dominaria Remastered</span>
           </div>
-          <div id="acronym"><span>DMR</span>
-            <div id="arrow-down"></div>
+          <div class="piwes-acronym"><span>DMR</span>
+            <div class="arrow-down"></div>
           </div>
         </div>
-        <div id="card-title">
-          <div id="title">
+        <div class="piw-product-title">
+          <div class="piwpt-wrapper">
             <h1>Contramágica</h1>
             <h2>Counterspell</h2>
           </div>
-          <div id="icons-button">
-            <img id="card-favorite" src="img/svg/Heart.svg" alt="favorite" onclick="" />
-            <button id="card-more-info" onclick="">
+          <div class="piwpt-buttons">
+            <img class="piwptb-favorite" src="img/svg/Heart.svg" alt="favorite" onclick="" />
+            <button class="piwptb-more-info">
               <div></div>
               <div></div>
               <div></div>
             </button>
           </div>
         </div>
-        <div id="shopping-list">
+        <div class="piw-shopping-list">
           <div>
-            <div id="shopping-list-title">
+            <div class="piwsl-title">
               <h1>Lista de Compras</h1>
               <img src="img/svg/Question.svg" alt="question" />
             </div>
             <p>Add a carta aqui e deixe que a Liga calcule o melhor preço para você!</p>
           </div>
-          <div id="shopping-list-actions">
-            <div id="shopping-list-filters">
-              <div id="shopping-list-counter">
+          <div class="piwsl-actions">
+            <div class="piwsla-filters">
+              <div class="piwslaf-counter">
                 <button>
                   <img src="img/svg/Plus.svg" alt="plus" />
                 </button>
@@ -83,54 +81,54 @@
                   <img src="img/svg/Minus.svg" alt="minus" />
                 </button>
                 </div>
-              <button id="shopping-list-settings">
+              <button class="piwslaf-settings">
                 <img src="img/svg/Settings.svg" alt="settings" />
               </button>
             </div>
-            <button id="shopping-list-add">
+            <button class="piwsla-add">
               <img src="img/svg/Add.svg" alt="add" />
               Adicionar na lista
             </button>
           </div>
         </div>
-        <div class="card-details more-padding">
-          <div class="card-details-title">
+        <div class="piw-product-details top-padding-8">
+          <div class="piwpd-title">
             <h1>Detalhes da Carta</h1>
-            <a id="card-details-title-show-all">Ver Tudo</a>
+            <a id="piwpdt-expand" class="expand-text">Ver Tudo</a>
           </div>
-          <div class="details">
-            <span class="details-title">Cor</span>
-            <span class="details-info">Azul</span>
+          <div class="piwpd-details">
+            <span class="details-text">Cor</span>
+            <span class="piwpdd-info">Azul</span>
           </div>
-          <div class="details">
-            <span class="details-title">Custo de Mana</span>
-            <div id="#details-mana">
+          <div class="piwpd-details">
+            <span class="details-text">Custo de Mana</span>
+            <div class="piwpdd-mana">
               <img src="img/svg/Mana.svg" alt="mana" />
               <img src="img/svg/Mana.svg" alt="mana" />
             </div>
           </div>
-          <div class="details">
-            <span class="details-title">Tipo</span>
-            <span class="details-info secondary">Mágica Instantânea</span>
+          <div class="piwpd-details">
+            <span class="details-text">Tipo</span>
+            <span class="piwpdd-info secondary">Mágica Instantânea</span>
           </div>
         </div>
-        <div class="card-details">
-          <div class="card-details-title">
-            <div class="card-details-title-wrapper">
+        <div class="piw-product-details">
+          <div class="piwpd-title">
+            <div class="piwpdt-wrapper">
               <h1>Preço Médio no Marketplace</h1>
               <img src="img/svg/Question.svg" alt="question" />
             </div>
-            <a>Ver Tudo</a>
+            <a id="piwpdt-price-expand" class="expand-text">Ver Tudo</a>
           </div>
-          <div class="details">
-            <div class="details-wrapper">
-              <div class="n-icon">N</div>
-              <span class="details-title">Normal</span>
+          <div class="piwpd-details">
+            <div class="piwpdd-wrapper">
+              <div class="piwpddw-n-icon">N</div>
+              <span class="details-text">Normal</span>
             </div>
-            <div class="details-prices">
-              <span class="cheapest">R$ 6,28</span>
-              <span class="mid-price">R$ 9,39</span>
-              <span class="most-expensive">R$ 14,00</span>
+            <div class="piwpdd-prices">
+              <span class="piwpddp-decorator cheapest">R$ 6,28</span>
+              <span class="piwpddp-decorator mid-price">R$ 9,39</span>
+              <span class="piwpddp-decorator most-expensive">R$ 14,00</span>
             </div>
           </div>
         </div>
