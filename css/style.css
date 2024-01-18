@@ -34,145 +34,98 @@ body {
 }
 
 /* texts */
-.details-text {
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.25px;
-  color: #727270;
-}
-
-.piwpdd-info {
-  font-family: 'Jost', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.5px;
-  text-align: right;
-  color: #0085FF;
-}
-
-.piw-breadcrumbs ol li a span {
+.small-text {
   font-family: 'Jost', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.15px;
-  color:
-    #9B9B98;
 }
 
-.piwesl-number {
+.small-text-bold {
   font-family: 'Jost', sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.1px;
   color: #04050C;
+  letter-spacing: 0.10px;
 }
 
-.piwesl-name {
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.15px;
-  color: #04050C;
-}
-
-.piwes-acronym span {
-  font-family: 'Jost', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.1px;
-  position: relative
-}
-
-.piwpt-wrapper h1 {
-  font-family: 'Jost', sans-serif;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 28px;
-  letter-spacing: 0.48px;
-  margin: 0px;
-  color: #04050C;
-}
-
-.piwpt-wrapper h2 {
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.65px;
-  margin: 0px;
-  color: #727270;
-}
-
-
-.piwsl-title h1 {
-  font-family: 'Jost', sans-serif;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 28px;
-  letter-spacing: 0.48px;
-  color: #474745;
-  margin: 0px;
-}
-
-.piw-shopping-list p {
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.25px;
-  color: #727270;
-  margin: 0px;
-}
-
-.piwslaf-counter span {
-  font-family: 'Jost', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.5px;
-  text-align: center;
-}
-
-.piwpd-title h1 {
-  font-family: 'Jost', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.5px;
-  color: #04050C;
-  margin: 0px;
-  padding-left: 20px;
-}
-
-.expand-text {
-  text-decoration: none;
+.small-text-bolder {
   font-family: 'Jost', sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
+  margin: 0;
+  color: #FF5921;
   letter-spacing: -0.55px;
   text-align: center;
-  color: #FF5921;
-  margin: 0px;
-  cursor: pointer;
 }
 
-.piwpdd-prices span {
+.medium-text {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.medium-text-bold {
   font-family: 'Jost', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.50px;
+  margin: 0;
+}
+
+.big-text {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.48px;
+  margin: 0;
+}
+
+.light-grey {
+  color: #9B9B98;
+}
+
+.grey {
   color: #727270;
-  position: relative;
+}
+
+.dark-grey {
+  color: #474745;
+}
+
+.blue {
+  color: #0085FF;
+}
+
+.black {
+  color: #04050C;
+}
+
+.ls-25 {
+  letter-spacing: 0.25px;
+}
+
+.ls-65 {
+  letter-spacing: 0.65px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.ta-right {
+  text-align: right;
+}
+
+.ta-center {
+  text-align: center;
 }
 
 /* texts */
@@ -296,6 +249,10 @@ body {
   align-items: center;
   gap: 16px;
   cursor: pointer;
+}
+
+.piwes-acronym span {
+  position: relative
 }
 
 .piwes-acronym span::before {
@@ -462,6 +419,15 @@ body {
   align-items: center;
 }
 
+.piwpd-title h1 {
+  padding-left: 20px;
+}
+
+.piwpd-title a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .piwpd-details {
   height: 34px;
   display: flex;
@@ -476,10 +442,6 @@ body {
   display: flex;
   align-items: center;
   gap: 2px;
-}
-
-.secondary {
-  color: #474745;
 }
 
 .top-padding-8 {
@@ -515,6 +477,10 @@ body {
 .piwpdd-prices {
   display: flex;
   gap: 32px;
+  position: relative;
+}
+
+.piwpdd-prices span {
   position: relative;
 }
 
