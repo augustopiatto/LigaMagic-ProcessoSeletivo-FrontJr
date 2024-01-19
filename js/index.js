@@ -59,3 +59,23 @@ function decreaseValue() {
     decreaseButton.classList.add("disabled")
   }
 }
+
+const addToListButton = document.getElementById("add-to-list-button");
+
+addToListButton?.addEventListener("click", addToList)
+
+function addToList() {
+  resetCardQuantity()
+  const warning = document.getElementById("warning");
+  warning.classList.add("visible")
+  const span = warning.children[0]
+  span.textContent = "O item foi adicionado à lista!"
+}
+
+function resetCardQuantity() {
+  cardQuantity.textContent = 1
+
+  if(!decreaseButton.classList.contains("disabled")) {
+    decreaseButton.classList.add("disabled")
+  }
+}

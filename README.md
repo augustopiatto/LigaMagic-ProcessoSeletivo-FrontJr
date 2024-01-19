@@ -55,6 +55,6 @@ O projeto possui as seguintes funcionalidades:
 
 ## Melhorias futuras
 
-- Tooltip no svg question
 - Select da edição
 - Carousel funcional
+- Fazer o warning sumir depois de um tempo

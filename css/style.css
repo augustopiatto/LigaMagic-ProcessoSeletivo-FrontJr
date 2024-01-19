@@ -199,6 +199,7 @@ body {
 .product-infos {
   width: 100%;
   padding: 32px 95px 40px 64px;
+  position: relative;
 }
 
 .pi-wrapper {
@@ -620,4 +621,28 @@ body {
 
 .tooltip-aim:hover+.tooltip-text {
   opacity: 1;
+}
+
+.warning {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5%;
+  min-height: 50px;
+  height: auto;
+  max-width: 70%;
+  background-color: #ECECEA;
+  border: 1px solid #9B9B98;
+  padding: 4px 16px 4px 16px;
+}
+
+.warning.visible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.warning.visible span {
+  color: #04050C;
 }
