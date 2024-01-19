@@ -203,6 +203,7 @@ body {
 
 .piw-breadcrumbs ol li {
   transition: transform 0.3s ease;
+  position: relative;
 }
 
 .piw-breadcrumbs ol li:hover {
@@ -211,18 +212,22 @@ body {
 
 .piw-breadcrumbs ol {
   display: flex;
-  gap: 8px;
+  gap: 17px;
   list-style-type: none;
   padding: 0px;
   margin: 0px;
 }
 
 .piw-breadcrumbs ol li::after {
-  content: "|";
-  font-size: 8px;
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 1px;
+  top: 50%;
+  transform: translateY(-50%);
   border-radius: 0.2px;
   margin-left: 8px;
-  color: #9B9B98;
+  background-color: #9B9B98;
 }
 
 .piw-breadcrumbs li:last-child::after {

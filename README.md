@@ -55,7 +55,6 @@ O projeto possui as seguintes funcionalidades:
 
 ## Melhorias futuras
 
-- Centralizar o elemento ::after do breadcrumbs
 - Tooltip no svg question
 - Select da edição
 - Carousel funcional
