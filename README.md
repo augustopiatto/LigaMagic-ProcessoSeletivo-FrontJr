@@ -57,4 +57,3 @@ O projeto possui as seguintes funcionalidades:
 
 - Select da edição
 - Carousel funcional
-- Fazer o warning sumir depois de um tempo

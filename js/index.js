@@ -61,15 +61,16 @@ function decreaseValue() {
 }
 
 const addToListButton = document.getElementById("add-to-list-button");
+const warning = document.getElementById("warning");
 
 addToListButton?.addEventListener("click", addToList)
 
 function addToList() {
   resetCardQuantity()
-  const warning = document.getElementById("warning");
   warning.classList.add("visible")
   const span = warning.children[0]
   span.textContent = "O item foi adicionado à lista!"
+  removeWarning()
 }
 
 function resetCardQuantity() {
@@ -78,4 +79,10 @@ function resetCardQuantity() {
   if(!decreaseButton.classList.contains("disabled")) {
     decreaseButton.classList.add("disabled")
   }
+}
+
+function removeWarning() {
+  setTimeout(() => {
+    warning.classList.remove("visible")
+  }, 3000)
 }
