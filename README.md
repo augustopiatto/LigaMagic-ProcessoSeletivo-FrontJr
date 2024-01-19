@@ -59,4 +59,3 @@ O projeto possui as seguintes funcionalidades:
 - Tooltip no svg question
 - Select da edição
 - Carousel funcional
-- fazer algo no 3 pontinhos do lado do favoritar
