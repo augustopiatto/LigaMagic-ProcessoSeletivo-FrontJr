@@ -56,4 +56,3 @@ O projeto possui as seguintes funcionalidades:
 ## Melhorias futuras
 
 - Select da edição
-- Carousel funcional

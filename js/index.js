@@ -86,3 +86,36 @@ function removeWarning() {
     warning.classList.remove("visible")
   }, 3000)
 }
+
+let currentIndex = 0
+let previousIndex
+const carouselItems = document.querySelectorAll(".pc-image");
+const carouselItemsQtt = carouselItems.length;
+const carouselContainer = document.getElementById("carousel");
+// 48 do espaçamento
+const carouselItemWidth = (carouselContainer.scrollWidth - 48)/ carouselItemsQtt
+const arrowLeft = document.getElementById("carousel-arrow-left");
+const arrowRight = document.getElementById("carousel-arrow-right");
+
+function previousCarouselImage() {
+  previousIndex = currentIndex;
+  currentIndex = (currentIndex - 1 + carouselItemsQtt) % carouselItemsQtt;
+
+  carouselContainer.insertBefore(carouselItems[currentIndex], carouselContainer.firstChild);
+  carouselContainer.style.transform = "";
+  carouselContainer.classList.add("sliding-transition");
+  carouselContainer.classList.remove("sliding-transition");
+}
+
+function nextCarouselImage() {
+  carouselContainer.classList.add("sliding-transition");
+  previousIndex = currentIndex;
+  currentIndex = (currentIndex + 1) % carouselItemsQtt;
+
+  carouselContainer.appendChild(carouselItems[previousIndex]);
+  carouselContainer.classList.remove("sliding-transition");
+  carouselContainer.style.transform = "";
+}
+
+arrowLeft.addEventListener("click", previousCarouselImage)
+arrowRight.addEventListener("click", nextCarouselImage)
