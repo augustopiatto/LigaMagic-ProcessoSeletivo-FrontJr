@@ -422,6 +422,11 @@ body {
   cursor: pointer;
 }
 
+.disabled {
+  opacity: 0.5;
+  cursor: default !important;
+}
+
 .piwslaf-settings {
   height: 40px;
   width: 40px;

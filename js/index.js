@@ -29,3 +29,33 @@ function addCloseDropdownEvent(element) {
     }
   }
 }
+
+const increaseButton = document.getElementById("increase-button");
+const decreaseButton = document.getElementById("decrease-button");
+const cardQuantity = document.getElementById("card-quantity");
+
+increaseButton?.addEventListener("click", increaseValue)
+decreaseButton?.addEventListener("click", decreaseValue)
+
+function increaseValue() {
+  const currentValue = cardQuantity.textContent
+  const newValue = parseInt(currentValue) + 1;
+  cardQuantity.textContent = newValue;
+
+  if(newValue > 1) {
+    decreaseButton.classList.remove("disabled")
+  }
+}
+
+function decreaseValue() {
+  const currentValue = cardQuantity.textContent
+  const newValue = parseInt(currentValue) - 1;
+
+  if(currentValue > 1) {
+    cardQuantity.textContent = newValue;
+  }
+  
+  if (newValue === 1) {
+    decreaseButton.classList.add("disabled")
+  }
+}
