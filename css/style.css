@@ -26,12 +26,19 @@ body {
   display: flex;
   gap: 16px;
   position: relative;
+  transition: transform 0.5s;
 }
 
 .p-carousel img {
   width: 106px;
   height: 147px;
-  cursor: pointer;
+  border-radius: 5px;
+  filter: grayscale(1);
+}
+
+.p-carousel .selected {
+  filter: grayscale(0);
+  animation: heartbeat ease-in-out 0.5s
 }
 
 /* texts */

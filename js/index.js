@@ -39,8 +39,9 @@ function addSelectEditionEvent(element) {
 }
 
 function handleSelectClick(event) {
-  const target = event.target;
-  if (target.tagName === "LI") {
+  const target = event.target.closest("li");
+  if (target) {
+    changeFocusedCard(target);
     changeSelectedEdition(target);
     closeDropdown();
   }
@@ -61,6 +62,16 @@ function changeSelectedEdition(target) {
   
   target.querySelector(".small-text-bold").textContent = currentEditionNumber
   target.querySelector(".small-text").textContent = currentEditionName
+}
+
+function changeFocusedCard(target) {
+  const carouselImages = document.getElementsByClassName("pc-image")
+  for (item of carouselImages) {
+    item.classList.remove("selected")
+  }
+  const targetElementNumber = target.querySelector(".small-text-bold").textContent
+  const image = document.getElementById(targetElementNumber)
+  image.classList.add("selected")
 }
 
 function closeDropdown() {
