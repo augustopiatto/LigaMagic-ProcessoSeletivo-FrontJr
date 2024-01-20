@@ -52,7 +52,3 @@ O projeto possui as seguintes funcionalidades:
 ### Tecnologias
 
 -
-
-## Melhorias futuras
-
-- Fazer um dropdown para o "filtro"

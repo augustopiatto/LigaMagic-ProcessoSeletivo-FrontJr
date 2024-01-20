@@ -467,6 +467,11 @@ body {
   transform: scale(1.05);
 }
 
+.piwslaf-dropdown.clicked {
+  width: 500px;
+  right: 100px;
+}
+
 .piwsla-add {
   height: 40px;
   border-radius: 1px;

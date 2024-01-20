@@ -3,12 +3,14 @@ const showDetails2 = document.getElementById("expand-2");
 const favoriteIcon = document.getElementById("favorite-icon");
 const moreInfo = document.getElementById("more-info");
 const editionSelect = document.getElementById("edition-select");
+const settingsButton = document.getElementById("settings-button");
 
 showDetails1?.addEventListener("click", () => toggleClickedClass("expand-container-1"));
 showDetails2?.addEventListener("click", () => toggleClickedClass("expand-container-2"));
 favoriteIcon?.addEventListener("click", () => toggleClickedClass("favorite-icon"));
-moreInfo?.addEventListener("click", () => toggleClickedClass("dropdown"));
-editionSelect?.addEventListener("click", () => toggleClickedClass("select"));
+settingsButton.addEventListener("click", () => toggleClickedClass("settings-dropdown"));
+moreInfo.addEventListener("click", () => toggleClickedClass("dropdown"));
+editionSelect.addEventListener("click", () => toggleClickedClass("select"));
 
 function toggleClickedClass(elementId) {
   const element = document.getElementById(elementId)
@@ -24,7 +26,7 @@ function toggleClickedClass(elementId) {
 }
 
 function addCloseDropdownEvent(element) {
-  if(element.id === "dropdown") {
+  if(element.classList.contains("dropdown")) {
     const liItens = element.getElementsByTagName("li")
     for (item of liItens) {
       item.addEventListener("click", () => element.classList.remove("clicked"));
