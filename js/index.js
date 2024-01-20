@@ -14,43 +14,65 @@ function toggleClickedClass(elementId) {
   const element = document.getElementById(elementId)
 
   if(element.classList.contains("clicked")) {
+    removeSelectEditionEvent(element);
     element.classList.remove("clicked")
   } else {
     element.classList.add("clicked")
     addCloseDropdownEvent(element)
-    addSelectEditionEvent()
+    addSelectEditionEvent(element)
   }
 }
 
 function addCloseDropdownEvent(element) {
-  if(element.id === "dropdown" || element.id === "select") {
+  if(element.id === "dropdown") {
     const liItens = element.getElementsByTagName("li")
     for (item of liItens) {
-      item?.addEventListener("click", () => toggleClickedClass(element.id));
+      item.addEventListener("click", () => element.classList.remove("clicked"));
     }
   }
 }
 
-function addSelectEditionEvent() {
-  const dropdownItems = document.querySelectorAll('.piw-select li');
-  dropdownItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const currentEditionNumber = document.getElementById('edition-number').textContent
-      const currentEditionName = document.getElementById('edition-name').textContent
+function addSelectEditionEvent(element) {
+  if (element.id === "select") {
+    element.addEventListener("click", handleSelectClick);
+  }
+}
 
-      const clickedLiFirstSpan = item.querySelector('.small-text-bold')
-      const clickedLiSeconSpan = item.querySelector('.small-text')
+function handleSelectClick(event) {
+  const target = event.target;
+  if (target.tagName === "LI") {
+    changeSelectedEdition(target);
+    closeDropdown();
+  }
+}
 
-      const newEditionNumber = clickedLiFirstSpan.textContent;
-      const newEditionName = clickedLiSeconSpan.textContent;
+function changeSelectedEdition(target) {
+  const currentEditionNumber = document.getElementById("edition-number").textContent
+  const currentEditionName = document.getElementById("edition-name").textContent
 
-      document.getElementById('edition-number').textContent = newEditionNumber;
-      document.getElementById('edition-name').textContent = newEditionName;
-      
-      item.querySelector('.small-text-bold').textContent = currentEditionNumber
-      item.querySelector('.small-text').textContent = currentEditionName
-    });
-  });
+  const clickedLiFirstSpan = target.querySelector(".small-text-bold")
+  const clickedLiSeconSpan = target.querySelector(".small-text")
+
+  const newEditionNumber = clickedLiFirstSpan.textContent;
+  const newEditionName = clickedLiSeconSpan.textContent;
+
+  document.getElementById("edition-number").textContent = newEditionNumber;
+  document.getElementById("edition-name").textContent = newEditionName;
+  
+  target.querySelector(".small-text-bold").textContent = currentEditionNumber
+  target.querySelector(".small-text").textContent = currentEditionName
+}
+
+function closeDropdown() {
+  const dropdown = document.getElementById("select");
+  removeSelectEditionEvent(dropdown);
+  dropdown.classList.remove("clicked");
+}
+
+function removeSelectEditionEvent(element) {
+  if (element.id === "select") {
+    element.removeEventListener("click", handleSelectClick);
+  }
 }
 
 const increaseButton = document.getElementById("increase-button");
