@@ -16,6 +16,18 @@ body {
   padding: 32px 40px 51px 80px;
 }
 
+.p-image {
+  display: none;
+  height: 489px;
+  width: 351px;
+  border-radius: 16px;
+  ;
+}
+
+.products .selected {
+  display: block;
+}
+
 .p-divider {
   height: 1px;
   background-color: #CECECE;

@@ -55,5 +55,4 @@ O projeto possui as seguintes funcionalidades:
 
 ## Melhorias futuras
 
-- Ao mudar a edição no select, focar a carta diferente no carousel
 - Fazer um dropdown para o "filtro"

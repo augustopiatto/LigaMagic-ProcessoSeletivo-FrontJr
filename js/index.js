@@ -65,13 +65,20 @@ function changeSelectedEdition(target) {
 }
 
 function changeFocusedCard(target) {
+  const mainImages = document.getElementsByClassName("p-image")
+  for (item of mainImages) {
+    item.classList.remove("selected")
+  }
   const carouselImages = document.getElementsByClassName("pc-image")
   for (item of carouselImages) {
     item.classList.remove("selected")
   }
+
   const targetElementNumber = target.querySelector(".small-text-bold").textContent
-  const image = document.getElementById(targetElementNumber)
-  image.classList.add("selected")
+  const images = document.getElementsByClassName(targetElementNumber)
+  for (image of images) {
+    image.classList.add("selected")
+  }
 }
 
 function closeDropdown() {
