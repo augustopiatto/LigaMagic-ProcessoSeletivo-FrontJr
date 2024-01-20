@@ -55,4 +55,6 @@ O projeto possui as seguintes funcionalidades:
 
 ## Melhorias futuras
 
-- Select da edição
+- Remover o clique duplo no select pra fechar a listagem
+- Ao mudar a edição no select, focar a carta diferente no carousel
+- Fazer um dropdown para o "filtro"

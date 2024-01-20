@@ -2,13 +2,13 @@ const showDetails1 = document.getElementById("expand-1");
 const showDetails2 = document.getElementById("expand-2");
 const favoriteIcon = document.getElementById("favorite-icon");
 const moreInfo = document.getElementById("more-info");
-const selectEdition = document.getElementById("edition-select");
+const editionSelect = document.getElementById("edition-select");
 
 showDetails1?.addEventListener("click", () => toggleClickedClass("expand-container-1"));
 showDetails2?.addEventListener("click", () => toggleClickedClass("expand-container-2"));
 favoriteIcon?.addEventListener("click", () => toggleClickedClass("favorite-icon"));
 moreInfo?.addEventListener("click", () => toggleClickedClass("dropdown"));
-selectEdition?.addEventListener("click", () => toggleClickedClass("select"));
+editionSelect?.addEventListener("click", () => toggleClickedClass("select"));
 
 function toggleClickedClass(elementId) {
   const element = document.getElementById(elementId)
@@ -18,6 +18,7 @@ function toggleClickedClass(elementId) {
   } else {
     element.classList.add("clicked")
     addCloseDropdownEvent(element)
+    addSelectEditionEvent()
   }
 }
 
@@ -28,6 +29,28 @@ function addCloseDropdownEvent(element) {
       item?.addEventListener("click", () => toggleClickedClass(element.id));
     }
   }
+}
+
+function addSelectEditionEvent() {
+  const dropdownItems = document.querySelectorAll('.piw-select li');
+  dropdownItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const currentEditionNumber = document.getElementById('edition-number').textContent
+      const currentEditionName = document.getElementById('edition-name').textContent
+
+      const clickedLiFirstSpan = item.querySelector('.small-text-bold')
+      const clickedLiSeconSpan = item.querySelector('.small-text')
+
+      const newEditionNumber = clickedLiFirstSpan.textContent;
+      const newEditionName = clickedLiSeconSpan.textContent;
+
+      document.getElementById('edition-number').textContent = newEditionNumber;
+      document.getElementById('edition-name').textContent = newEditionName;
+      
+      item.querySelector('.small-text-bold').textContent = currentEditionNumber
+      item.querySelector('.small-text').textContent = currentEditionName
+    });
+  });
 }
 
 const increaseButton = document.getElementById("increase-button");
