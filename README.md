@@ -23,9 +23,10 @@ Para iniciar o projeto, siga os passos abaixo:
 ```
 ├── css                      # Pasta de estilos
 │   ├── style.css            # Estilos dos componentes
-├── html                     # Pasta de arquivos HTML e componentes
 ├── js                       # Pasta de arquivos Javascript para lógica do projeto
-├── img                      # Para de imagens utilizadas
+│   ├── index.js             # Arquivo para definição de lógica e interatividade da página
+├── img                      # Pasta para imagens
+│   ├── svg                  # Pasta para arquivos svg
 ├── index.html               # Arquivo de acesso do HTML, JS e CSS
 └── README.md                # Documentação do projeto
 ```
@@ -37,7 +38,7 @@ Para iniciar o projeto, siga os passos abaixo:
 O projeto inclui as seguintes tecnologias:
 
 - HTML para estruturação da página
-- Javascript para escalabilidade
+- Javascript para interatividade
 - CSS para estilização
 
 ### Funcionalidades
