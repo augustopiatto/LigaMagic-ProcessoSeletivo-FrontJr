@@ -5,12 +5,12 @@ const moreInfo = document.getElementById("more-info");
 const editionSelect = document.getElementById("edition-select");
 const settingsButton = document.getElementById("settings-button");
 
-showDetails1?.addEventListener("click", () => toggleClickedClass("expand-container-1"));
-showDetails2?.addEventListener("click", () => toggleClickedClass("expand-container-2"));
-favoriteIcon?.addEventListener("click", () => toggleClickedClass("favorite-icon"));
-settingsButton.addEventListener("click", () => toggleClickedClass("settings-dropdown"));
+showDetails1.addEventListener("click", () => toggleClickedClass("expand-container-1"));
+showDetails2.addEventListener("click", () => toggleClickedClass("expand-container-2"));
+favoriteIcon.addEventListener("click", () => toggleClickedClass("favorite-icon"));
 moreInfo.addEventListener("click", () => toggleClickedClass("dropdown"));
 editionSelect.addEventListener("click", () => toggleClickedClass("select"));
+settingsButton.addEventListener("click", () => toggleClickedClass("settings-dropdown"));
 
 function toggleClickedClass(elementId) {
   const element = document.getElementById(elementId)
@@ -43,30 +43,37 @@ function addSelectEditionEvent(element) {
 function handleSelectClick(event) {
   const target = event.target.closest("li");
   if (target) {
-    changeFocusedCard(target);
-    changeSelectedEdition(target);
+    const cardId = target.querySelector(".small-text-bold").textContent
+    changeFocusedCard(cardId);
+    changeSelectedEdition(cardId);
     closeDropdown();
   }
 }
 
-function changeSelectedEdition(target) {
+function changeSelectedEdition(cardId) {
   const currentEditionNumber = document.getElementById("edition-number").textContent
   const currentEditionName = document.getElementById("edition-name").textContent
 
-  const clickedLiFirstSpan = target.querySelector(".small-text-bold")
-  const clickedLiSeconSpan = target.querySelector(".small-text")
+  let selectedLiEdition
+  for (option of document.querySelectorAll("span.small-text-bold")) {
+    if (option.textContent === cardId) {
+      selectedLiEdition = option.parentNode
+    }
+  }
 
-  const newEditionNumber = clickedLiFirstSpan.textContent;
-  const newEditionName = clickedLiSeconSpan.textContent;
+  const selectedLiEditionNumberNode = selectedLiEdition.children[0]
+  const selectedLiEditionNameNode = selectedLiEdition.children[1]
+  const newEditionNumber = selectedLiEditionNumberNode.textContent
+  const newEditionName = selectedLiEditionNameNode.textContent
 
   document.getElementById("edition-number").textContent = newEditionNumber;
   document.getElementById("edition-name").textContent = newEditionName;
   
-  target.querySelector(".small-text-bold").textContent = currentEditionNumber
-  target.querySelector(".small-text").textContent = currentEditionName
+  selectedLiEditionNumberNode.textContent = currentEditionNumber
+  selectedLiEditionNameNode.textContent = currentEditionName
 }
 
-function changeFocusedCard(target) {
+function changeFocusedCard(cardId) {
   const mainImages = document.getElementsByClassName("p-image")
   for (item of mainImages) {
     item.classList.remove("selected")
@@ -76,8 +83,7 @@ function changeFocusedCard(target) {
     item.classList.remove("selected")
   }
 
-  const targetElementNumber = target.querySelector(".small-text-bold").textContent
-  const images = document.getElementsByClassName(targetElementNumber)
+  const images = document.getElementsByClassName(cardId)
   for (image of images) {
     image.classList.add("selected")
   }
@@ -99,8 +105,8 @@ const increaseButton = document.getElementById("increase-button");
 const decreaseButton = document.getElementById("decrease-button");
 const cardQuantity = document.getElementById("card-quantity");
 
-increaseButton?.addEventListener("click", increaseValue)
-decreaseButton?.addEventListener("click", decreaseValue)
+increaseButton.addEventListener("click", increaseValue)
+decreaseButton.addEventListener("click", decreaseValue)
 
 function increaseValue() {
   const currentValue = cardQuantity.textContent
@@ -128,7 +134,7 @@ function decreaseValue() {
 const addToListButton = document.getElementById("add-to-list-button");
 const warning = document.getElementById("warning");
 
-addToListButton?.addEventListener("click", addToList)
+addToListButton.addEventListener("click", addToList)
 
 function addToList() {
   resetCardQuantity()
@@ -152,34 +158,43 @@ function removeWarning() {
   }, 3000)
 }
 
-let currentIndex = 0
-let previousIndex
+let currentIndex = 2
 const carouselItems = document.querySelectorAll(".pc-image");
 const carouselItemsQtt = carouselItems.length;
-const carouselContainer = document.getElementById("carousel");
 // 48 do espaçamento
-const carouselItemWidth = (carouselContainer.scrollWidth - 48)/ carouselItemsQtt
 const arrowLeft = document.getElementById("carousel-arrow-left");
 const arrowRight = document.getElementById("carousel-arrow-right");
 
 function previousCarouselImage() {
-  previousIndex = currentIndex;
-  currentIndex = (currentIndex - 1 + carouselItemsQtt) % carouselItemsQtt;
-
-  carouselContainer.insertBefore(carouselItems[currentIndex], carouselContainer.firstChild);
-  carouselContainer.style.transform = "";
-  carouselContainer.classList.add("sliding-transition");
-  carouselContainer.classList.remove("sliding-transition");
+  carouselItems[currentIndex].classList.remove("selected")
+  if (currentIndex === 0) {
+    currentIndex = carouselItemsQtt - 1
+  } else {
+    currentIndex -= 1
+  }
+  carouselItems[currentIndex].classList.add("selected")
+  let cardId
+  for (item of carouselItems[currentIndex].classList) {
+    if (item.includes("#")) cardId = item
+  }
+  changeFocusedCard(cardId)
+  changeSelectedEdition(cardId)
 }
 
 function nextCarouselImage() {
-  carouselContainer.classList.add("sliding-transition");
-  previousIndex = currentIndex;
-  currentIndex = (currentIndex + 1) % carouselItemsQtt;
-
-  carouselContainer.appendChild(carouselItems[previousIndex]);
-  carouselContainer.classList.remove("sliding-transition");
-  carouselContainer.style.transform = "";
+  carouselItems[currentIndex].classList.remove("selected")
+  if ((currentIndex + 2) > carouselItemsQtt) {
+    currentIndex = 0
+  } else {
+    currentIndex += 1
+  }
+  carouselItems[currentIndex].classList.add("selected")
+  let cardId
+  for (item of carouselItems[currentIndex].classList) {
+    if (item.includes("#")) cardId = item
+  }
+  changeFocusedCard(cardId)
+  changeSelectedEdition(cardId)
 }
 
 arrowLeft.addEventListener("click", previousCarouselImage)
