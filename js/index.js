@@ -44,48 +44,16 @@ function handleSelectClick(event) {
   const target = event.target.closest("li");
   if (target) {
     const cardId = target.querySelector(".small-text-bold").textContent
-    changeFocusedCard(cardId);
     changeSelectedEdition(cardId);
-    closeDropdown();
-  }
-}
-
-function changeSelectedEdition(cardId) {
-  const currentEditionNumber = document.getElementById("edition-number").textContent
-  const currentEditionName = document.getElementById("edition-name").textContent
-
-  let selectedLiEdition
-  for (option of document.querySelectorAll("span.small-text-bold")) {
-    if (option.textContent === cardId) {
-      selectedLiEdition = option.parentNode
+    
+    let index = 0
+    for (item of carouselItems) {
+      if (item.classList.contains(`${cardId}`)) currentIndex = index
+      index += 1
     }
-  }
+    changeFocusedCard();
 
-  const selectedLiEditionNumberNode = selectedLiEdition.children[0]
-  const selectedLiEditionNameNode = selectedLiEdition.children[1]
-  const newEditionNumber = selectedLiEditionNumberNode.textContent
-  const newEditionName = selectedLiEditionNameNode.textContent
-
-  document.getElementById("edition-number").textContent = newEditionNumber;
-  document.getElementById("edition-name").textContent = newEditionName;
-  
-  selectedLiEditionNumberNode.textContent = currentEditionNumber
-  selectedLiEditionNameNode.textContent = currentEditionName
-}
-
-function changeFocusedCard(cardId) {
-  const mainImages = document.getElementsByClassName("p-image")
-  for (item of mainImages) {
-    item.classList.remove("selected")
-  }
-  const carouselImages = document.getElementsByClassName("pc-image")
-  for (item of carouselImages) {
-    item.classList.remove("selected")
-  }
-
-  const images = document.getElementsByClassName(cardId)
-  for (image of images) {
-    image.classList.add("selected")
+    closeDropdown();
   }
 }
 
@@ -161,41 +129,66 @@ function removeWarning() {
 let currentIndex = 2
 const carouselItems = document.querySelectorAll(".pc-image");
 const carouselItemsQtt = carouselItems.length;
+changeFocusedCard()
 // 48 do espaçamento
 const arrowLeft = document.getElementById("carousel-arrow-left");
 const arrowRight = document.getElementById("carousel-arrow-right");
 
 function previousCarouselImage() {
-  carouselItems[currentIndex].classList.remove("selected")
   if (currentIndex === 0) {
     currentIndex = carouselItemsQtt - 1
   } else {
-    currentIndex -= 1
+    currentIndex = currentIndex - 1
   }
-  carouselItems[currentIndex].classList.add("selected")
-  let cardId
-  for (item of carouselItems[currentIndex].classList) {
-    if (item.includes("#")) cardId = item
-  }
-  changeFocusedCard(cardId)
+  changeFocusedCard()
+  const cardId = getCarouselCardId()
   changeSelectedEdition(cardId)
 }
 
 function nextCarouselImage() {
-  carouselItems[currentIndex].classList.remove("selected")
   if ((currentIndex + 2) > carouselItemsQtt) {
     currentIndex = 0
   } else {
-    currentIndex += 1
+    currentIndex = currentIndex + 1
   }
-  carouselItems[currentIndex].classList.add("selected")
-  let cardId
-  for (item of carouselItems[currentIndex].classList) {
-    if (item.includes("#")) cardId = item
-  }
-  changeFocusedCard(cardId)
+  changeFocusedCard()
+  const cardId = getCarouselCardId()
   changeSelectedEdition(cardId)
 }
 
 arrowLeft.addEventListener("click", previousCarouselImage)
 arrowRight.addEventListener("click", nextCarouselImage)
+
+function changeSelectedEdition(cardId) {
+  const currentEditionNumber = document.getElementById("edition-number").textContent
+  const currentEditionName = document.getElementById("edition-name").textContent
+
+  let selectedLiEdition
+  for (option of document.querySelectorAll("span.small-text-bold")) {
+    if (option.textContent === cardId) {
+      selectedLiEdition = option.parentNode
+    }
+  }
+  const selectedLiEditionNumberNode = selectedLiEdition.children[0]
+  const selectedLiEditionNameNode = selectedLiEdition.children[1]
+  const newEditionNumber = selectedLiEditionNumberNode.textContent
+  const newEditionName = selectedLiEditionNameNode.textContent
+
+  document.getElementById("edition-number").textContent = newEditionNumber;
+  document.getElementById("edition-name").textContent = newEditionName;
+  
+  selectedLiEditionNumberNode.textContent = currentEditionNumber
+  selectedLiEditionNameNode.textContent = currentEditionName
+}
+
+function changeFocusedCard() {
+  for (item of carouselItems) item.classList.remove("selected")
+  carouselItems[currentIndex].classList.add("selected")
+}
+
+function getCarouselCardId() {
+  for (item of carouselItems[currentIndex].classList) {
+    if (item.includes("#")) cardId = item
+  }
+  return cardId
+}

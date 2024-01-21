@@ -290,6 +290,10 @@ body {
   gap: 4px;
 }
 
+.piwes-label p {
+  margin: 0px;
+}
+
 .piwes-acronym {
   display: flex;
   align-items: center;
@@ -468,8 +472,10 @@ body {
 }
 
 .piwslaf-dropdown.clicked {
-  width: 500px;
-  right: 100px;
+  max-width: 20vw;
+  width: 100%;
+  min-width: 200px;
+  left: 180px;
 }
 
 .piwsla-add {
