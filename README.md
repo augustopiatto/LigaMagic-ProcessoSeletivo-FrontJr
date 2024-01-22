@@ -4,7 +4,7 @@
 
 Este é um projeto que usa HTML, Javascript, CSS.
 
-É uma stack de desenvolvimento utilizada para telas performáticas, sem grande complexidades, especialmente landing pages..
+É uma stack de desenvolvimento utilizada para telas performáticas, sem grande complexidades, especialmente landing pages.
 
 ## Preview
 
@@ -47,9 +47,3 @@ O projeto possui as seguintes funcionalidades:
 
 - Prototipação da tela de lista de desejos
 - Separação do código em componentes para facilidade de leitura
-
-## Decisões técnicas
-
-### Tecnologias
-
--
