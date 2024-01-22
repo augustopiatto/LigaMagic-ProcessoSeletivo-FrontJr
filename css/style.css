@@ -509,13 +509,48 @@ body {
 }
 
 .piwpd-wrapper {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.piwpd-wrapper.clicked {
+.modal {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  height: 60vh;
+  width: 80vw;
+  border-radius: 1px;
+  padding: 18px 24px 18px 36px;
+  background-color: #F4F4F2;
+  z-index: 10;
+  box-shadow: 0px 0px 0px 50vmax rgba(0, 0, 0, 0.5);
+}
+
+.modal.clicked {
+  display: block;
+}
+
+#all-price-infos-modal ul {
+  padding-left: 0px;
+}
+
+#all-price-infos-modal li {
+  list-style: none;
+}
+
+.piwpdm-prices {
   display: flex;
+  gap: 30px;
+  padding: 8px 8px 8px 18px;
+  border-radius: 1px;
+  background-color: #ECECEA;
+}
+
+.piwpdm-prices span {
+  position: relative;
 }
 
 .piwpd-title {
@@ -590,7 +625,7 @@ body {
   position: relative;
 }
 
-.piwpddp-decorator::before {
+.decorator::before {
   content: "";
   height: 20px;
   width: 4px;

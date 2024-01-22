@@ -1,12 +1,12 @@
-const showDetails1 = document.getElementById("expand-1");
-const showDetails2 = document.getElementById("expand-2");
+const showDetails1 = document.getElementById("expand-detail-infos");
+const showDetails2 = document.getElementById("expand-price-infos");
 const favoriteIcon = document.getElementById("favorite-icon");
 const moreInfo = document.getElementById("more-info");
 const editionSelect = document.getElementById("edition-select");
 const settingsButton = document.getElementById("settings-button");
 
-showDetails1.addEventListener("click", () => toggleClickedClass("expand-container-1"));
-showDetails2.addEventListener("click", () => toggleClickedClass("expand-container-2"));
+showDetails1.addEventListener("click", () => toggleClickedClass("all-detail-infos-modal"));
+showDetails2.addEventListener("click", () => toggleClickedClass("all-price-infos-modal"));
 favoriteIcon.addEventListener("click", () => toggleClickedClass("favorite-icon"));
 moreInfo.addEventListener("click", () => toggleClickedClass("dropdown"));
 editionSelect.addEventListener("click", () => toggleClickedClass("select"));
@@ -191,4 +191,17 @@ function getCarouselCardId() {
     if (item.includes("#")) cardId = item
   }
   return cardId
+}
+
+const modals = document.getElementsByClassName("modal");
+
+document.addEventListener("mousedown", closeModal)
+
+function closeModal(event) {
+  const clickedElement = event.target
+  for (modal of modals) {
+    if (modal.classList.contains("clicked") && !modal.contains(clickedElement)) {
+      modal.classList.remove("clicked")
+    }
+  }
 }

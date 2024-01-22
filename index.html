@@ -66,7 +66,7 @@
             </li>
           </ul>
         </div>
-        <div class="piw-product-title">
+        <section class="piw-product-title">
           <div class="piwpt-wrapper">
             <h1 class="big-text black">Contramágica</h1>
             <h2 class="medium-text grey italic ls-65">Counterspell</h2>
@@ -91,8 +91,8 @@
               </ul>
             </div>
           </div>
-        </div>
-        <div class="piw-shopping-list">
+        </section>
+        <section class="piw-shopping-list">
           <div>
             <div class="piwsl-title">
               <h1 class="big-text dark-grey">Lista de Compras</h1>
@@ -135,16 +135,19 @@
               Adicionar na lista
             </button>
           </div>
-        </div>
-        <div class="piw-product-details top-padding-8">
+        </section>
+        <section class="piw-product-details top-padding-8">
           <div class="piwpd-title">
             <h1 class="medium-text-bold black">Detalhes da Carta</h1>
             <a
-              id="expand-1"
+              id="expand-detail-infos"
               class="small-text-bolder"
             >Ver Tudo</a>
           </div>
-          <div id="expand-container-1" class="piwpd-wrapper">
+          <div id="all-detail-infos-modal" class="modal">
+            Oi
+          </div>
+          <div class="piwpd-wrapper">
             <div class="piwpd-details">
               <span class="medium-text grey ls-25">Cor</span>
               <span class="medium-text-bold blue ta-right">Azul</span>
@@ -161,8 +164,8 @@
               <span class="medium-text-bold dark-grey ta-right">Mágica Instantânea</span>
             </div>
           </div>
-        </div>
-        <div class="piw-product-details">
+        </section>
+        <section class="piw-product-details">
           <div class="piwpd-title">
             <div class="piwpdt-wrapper">
               <h1 class="medium-text-bold black">Preço Médio no Marketplace</h1>
@@ -172,24 +175,51 @@
               </div>
             </div>
             <a
-              id="expand-2"
+              id="expand-price-infos"
               class="small-text-bolder"
             >Ver Tudo</a>
           </div>
-          <div id="expand-container-2" class="piwpd-wrapper">
+          <div id="all-price-infos-modal" class="piwpd-modal medium-text modal">
+            <h1>Preços</h1>
+            <ul>
+              <li class="piwpdm-prices">
+                <span class="decorator cheapest medium-text-bold grey">R$ 6,28</span>
+                <span class="decorator mid-price medium-text-bold grey">R$ 9,39</span>
+                <span class="decorator most-expensive medium-text-bold grey">R$ 14,00</span>
+              </li>
+              <li class="piwpdm-prices">
+                <span class="decorator cheapest medium-text-bold grey">R$ 6,28</span>
+                <span class="decorator mid-price medium-text-bold grey">R$ 9,39</span>
+                <span class="decorator most-expensive medium-text-bold grey">R$ 14,00</span>
+              </li><li class="piwpdm-prices">
+                <span class="decorator cheapest medium-text-bold grey">R$ 6,28</span>
+                <span class="decorator mid-price medium-text-bold grey">R$ 9,39</span>
+                <span class="decorator most-expensive medium-text-bold grey">R$ 14,00</span>
+              </li><li class="piwpdm-prices">
+                <span class="decorator cheapest medium-text-bold grey">R$ 6,28</span>
+                <span class="decorator mid-price medium-text-bold grey">R$ 9,39</span>
+                <span class="decorator most-expensive medium-text-bold grey">R$ 14,00</span>
+              </li><li class="piwpdm-prices">
+                <span class="decorator cheapest medium-text-bold grey">R$ 6,28</span>
+                <span class="decorator mid-price medium-text-bold grey">R$ 9,39</span>
+                <span class="decorator most-expensive medium-text-bold grey">R$ 14,00</span>
+              </li>
+            </ul>
+          </div>
+          <div class="piwpd-wrapper">
             <div class="piwpd-details">
               <div class="piwpdd-wrapper">
                 <div class="piwpddw-n-icon">N</div>
                 <span class="medium-text grey ls-25">Normal</span>
               </div>
               <div class="piwpdd-prices">
-                <span class="piwpddp-decorator cheapest medium-text-bold grey">R$ 6,28</span>
-                <span class="piwpddp-decorator mid-price medium-text-bold grey">R$ 9,39</span>
-                <span class="piwpddp-decorator most-expensive medium-text-bold grey">R$ 14,00</span>
+                <span class="decorator cheapest medium-text-bold grey">R$ 6,28</span>
+                <span class="decorator mid-price medium-text-bold grey">R$ 9,39</span>
+                <span class="decorator most-expensive medium-text-bold grey">R$ 14,00</span>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   </div>
