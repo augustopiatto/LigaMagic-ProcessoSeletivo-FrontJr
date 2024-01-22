@@ -127,7 +127,8 @@ function removeWarning() {
 }
 
 let currentIndex = 2
-const carouselItems = document.querySelectorAll(".pc-image");
+const possibleVisualItems = document.getElementsByClassName("p-image")
+const carouselItems = document.getElementsByClassName("pc-image");
 const carouselItemsQtt = carouselItems.length;
 changeFocusedCard()
 // 48 do espaçamento
@@ -184,6 +185,9 @@ function changeSelectedEdition(cardId) {
 function changeFocusedCard() {
   for (item of carouselItems) item.classList.remove("selected")
   carouselItems[currentIndex].classList.add("selected")
+
+  for (item of possibleVisualItems) item.classList.remove("selected")
+  possibleVisualItems[currentIndex].classList.add("selected")
 }
 
 function getCarouselCardId() {

@@ -21,7 +21,6 @@ body {
   height: 489px;
   width: 351px;
   border-radius: 16px;
-  ;
 }
 
 .products .selected {
@@ -533,20 +532,27 @@ body {
   display: block;
 }
 
-#all-price-infos-modal ul {
+.piwpd-modal ul {
   padding-left: 0px;
 }
 
-#all-price-infos-modal li {
+.piwpd-modal li {
   list-style: none;
+  margin: 20px 0px;
 }
 
-.piwpdm-prices {
+.piwpdm-prices,
+.piwpdm-details {
   display: flex;
   gap: 30px;
   padding: 8px 8px 8px 18px;
   border-radius: 1px;
   background-color: #ECECEA;
+}
+
+.piwpdm-details {
+  padding: 8px 18px 8px 18px;
+  justify-content: space-between;
 }
 
 .piwpdm-prices span {
@@ -569,7 +575,7 @@ body {
   cursor: pointer;
 }
 
-.piwpd-details {
+.piwpdw-details {
   height: 34px;
   display: flex;
   justify-content: space-between;
@@ -589,7 +595,7 @@ body {
   margin-top: 8px;
 }
 
-.piwpddw-n-icon {
+.piwpdwdw-n-icon {
   height: 20px;
   width: 20px;
   font-family: 'Roboto', sans-serif;
@@ -603,7 +609,7 @@ body {
   color: #04050C;
 }
 
-.piwpdd-wrapper {
+.piwpdwd-wrapper {
   display: flex;
   justify-content: center;
   gap: 4px;
@@ -615,13 +621,13 @@ body {
   gap: 4px;
 }
 
-.piwpdd-prices {
+.piwpdwd-prices {
   display: flex;
   gap: 32px;
   position: relative;
 }
 
-.piwpdd-prices span {
+.piwpdwd-prices span {
   position: relative;
 }
 
