@@ -1,4 +1,4 @@
-# LigaMagic
+# Tela de Compras de Cartas
 
 ## Visão Geral do Projeto
 
